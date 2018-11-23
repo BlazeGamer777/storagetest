@@ -3,6 +3,8 @@ const bot = new Discord.Client();
 const fs = require('fs');
 const moment = require('moment');
 
+let token = process.env.token
+
 let userData = JSON.parse(fs.readFileSync('Storage/userData.json', 'utf8'));
 let inv = JSON.parse(fs.readFileSync('Storage/inv.json', 'utf8'));
 
@@ -90,4 +92,4 @@ bot.on('ready', () => {
   console.log("Ready!")
 })
 
-bot.login('NTAzNzA3Njc0MDc3Mjk4Njg4.Dq6Z-w.mMOvE-ZSmnwx9V_c2H8QNELfgNk');
+bot.login(token);
